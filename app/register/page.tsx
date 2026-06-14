@@ -1,6 +1,6 @@
-import LoginForm from "@/features/LoginForm";
+import RegisterForm from "@/features/RegisterForm";
 
-export default function Home() {
+export default function Register() {
     return (
         <main className="
             flex
@@ -9,7 +9,7 @@ export default function Home() {
             justify-center
             bg-background
         ">
-            <LoginForm />
+            <RegisterForm />
         </main>
-    );
+    )
 }

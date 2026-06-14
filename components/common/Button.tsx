@@ -11,7 +11,7 @@ export default function Button({
     ...props
 }: ButtonProps) {
     const variants = {
-        primary: 'bg-primary text-white hover:bg-primary-border',
+        primary: 'bg-primary text-white hover:bg-primary-hover',
         secondary: 'bg-surface text-foreground border border-border hover:bg-background',
         ghost: 'bg-transparent text-primary hover:bg-surface',
         danger: 'bg-danger text-white'
@@ -22,8 +22,9 @@ export default function Button({
             className={`
                 h-12
                 px-4
-                rounded-x1
+                rounded-xl
                 font-medium
+                cursor-pointer
                 transition-colors
                 disabled:opacity-50
                 disabled:cursor-not-allowed
