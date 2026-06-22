@@ -11,22 +11,24 @@ import { Eye, EyeOff } from "lucide-react"
 import { useState } from "react"
 import Link from "next/link";
 
-export default function LoginForm() {
+export default function ResetPassForm() {
 
     const [showPassword, setShowPassword] = useState(false);
+    const [confirmShowPassword, setConfirmShowPassword] = useState(false);
+    
 
     return (
         <Paper className="w-full max-w-md p-8">
             <Typography variant="h1" className="text-center text-primary mb-6" >
-                Life Control
+                Reestablecer Contraseña
             </Typography>
 
             <Stack spacing={4}>
-                <TextField
-                    label="Correo"
-                />
-
                 <Stack spacing={1}>
+                    <Typography variant="body">
+                        Ingresa una nueva contraseña.
+                    </Typography>
+
                     <TextField
                         label="Contraseña"
                         type={showPassword ? "text" : "password"}
@@ -37,33 +39,23 @@ export default function LoginForm() {
                         }
                         onRightElementClick={() => setShowPassword(prev => !prev)}
                     />
-
-                    <Box className="text-right">
-                        <Link href="/forgot-password">
-                            <Typography variant="link">
-                                ¿Olvidaste tu contraseña?
-                            </Typography>
-                        </Link>
-                    </Box>
                 </Stack>
                 
-                <Stack spacing={1}>
-                    <Button className="w-full">
-                        Iniciar sesión
-                    </Button>
 
-                    <Box className="flex space-x-1">
-                        <Typography>
-                            ¿Necesitas una cuenta?
-                        </Typography>
-                        <Link href="/register">
-                            <Typography variant="link">
-                                Registrarse
-                            </Typography>
-                        </Link>
-                    </Box>
-                    
-                </Stack>
+                <TextField
+                    label="Confirmar Contraseña"
+                    type={confirmShowPassword ? "text" : "password"}
+                    rightElement={
+                        confirmShowPassword 
+                            ? <EyeOff size={24} /> 
+                            : <Eye size={24} />
+                    }
+                    onRightElementClick={() => setConfirmShowPassword(prev => !prev)}
+                />
+
+                <Button className="w-full">
+                    Guardar Contraseña
+                </Button>
             </Stack>
         </Paper>
     )

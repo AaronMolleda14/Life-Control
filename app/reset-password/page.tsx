@@ -1,6 +1,6 @@
-import ForgotPassForm from "@/features/ForgotPassForm"
+import ResetPassForm from "@/features/ResetPassForm"
 
-export default function ForgotPassword() {
+export default function Register() {
     return (
         <main className="
             flex
@@ -9,7 +9,7 @@ export default function ForgotPassword() {
             justify-center
             bg-background
         ">
-            <ForgotPassForm />
+            <ResetPassForm />
         </main>
     )
 }
