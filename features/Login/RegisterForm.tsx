@@ -5,7 +5,7 @@ import Button from "@/components/common/UI/Button"
 import Paper from "@/components/common/UI/Paper"
 import Box from "@/components/common/UI/Box"
 import Stack from "@/components/common/UI/Stack"
-import DatePicker from "@/components/common/DatePicker/DatePicker"
+import DatePicker from "@/components/common/UI/DatePicker"
 import Form from "@/components/common/UI/Form"
 import useForm from "@/hooks/useForm";
 

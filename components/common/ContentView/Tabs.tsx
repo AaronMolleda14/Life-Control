@@ -46,6 +46,7 @@ export default function Tabs({
                                     bg-surface/70
                                     text-primary
                                     border-primary
+                                    font-semibold
                                     
                                 `
                                 : `

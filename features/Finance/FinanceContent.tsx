@@ -12,18 +12,17 @@ export default function FinanceContent() {
                 value={tab}
                 onChange={setTab}
                 tabs={[
-                    {
-                        value: "movements",
-                        label: "Movimientos",
-                    },
-                    {
-                        value: "analytics",
-                        label: "KPIs",
-                    },
+                    { value: "movements", label: "Movimientos" },
+                    { value: "table", label: "Tabla" },
+                    { value: "analytics", label: "KPIs" },
                 ]}
             >
                 {tab === "movements" && (
                     <Movements />
+                )}
+
+                {tab === "table" && (
+                    <FinanceKPIs />
                 )}
 
                 {tab === "analytics" && (

@@ -3,10 +3,11 @@
 import dayjs, { Dayjs } from "dayjs";
 import { getCalendarDays } from "@/utils/getCalendarDays";
 
-interface CalendarGridProps {
+interface DaysGridProps {
     currentMonth: Dayjs;
     selectedDate?: Dayjs | null;
     onSelect: (date: Dayjs) => void;
+    renderDay?: (date: Dayjs) => React.ReactNode;
 }
 
 const WEEK_DAYS = [
@@ -23,7 +24,8 @@ export default function DaysGrid({
     currentMonth,
     selectedDate,
     onSelect,
-}: CalendarGridProps) {
+    renderDay,
+}: DaysGridProps) {
 
     const days = getCalendarDays(currentMonth);
 
@@ -44,9 +46,9 @@ export default function DaysGrid({
             </div>
 
             <div className="grid grid-cols-7 gap-1">
-                {days.map((date, index) => {
+                {days.map((day, index) => {
 
-                    if (!date) {
+                    if (!day) {
                         return (
                             <div
                                 key={index}
@@ -55,13 +57,13 @@ export default function DaysGrid({
                         );
                     }
 
-                    const isToday =date.isSame(dayjs(), "day");
-                    const isSelected = selectedDate?.isSame(date, "day");
+                    const isToday =day.isSame(dayjs(), "day");
+                    const isSelected = selectedDate?.isSame(day, "day");
 
                     return (
                         <button
-                            key={date.toString()}
-                            onClick={() => onSelect(date)}
+                            key={day.toString()}
+                            onClick={() => onSelect(day)}
                             className={`
                                 h-10
                                 w-10
@@ -69,12 +71,9 @@ export default function DaysGrid({
                                 transition-all
                                 cursor-pointer
 
-                                hover:bg-primary/10
-
-
                                 ${isSelected
-                                    ? "bg-primary text-white"
-                                    : ""
+                                    ? "bg-primary text-white hover:bg-primary-hover"
+                                    : "hover:bg-primary/10"
                                 }
 
                                 ${!isSelected && isToday
@@ -88,7 +87,11 @@ export default function DaysGrid({
                                 }
                             `}
                         >
-                            {date.date()}
+                            <span>
+                                {day.date()}
+                            </span>
+
+                            {renderDay?.(day)}
                         </button>
                     );
                 })}

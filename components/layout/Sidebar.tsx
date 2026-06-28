@@ -16,6 +16,7 @@ import {
     MapPin,
     Ambulance,
 } from "lucide-react";
+import Divider from "../common/UI/Divider";
 
 const menu = [
     { label: "Inicio", icon: Home },
@@ -41,15 +42,16 @@ export default function Sidebar() {
             flex-col
         ">
             <Typography
-                variant="h2"
+                variant="h1"
                 className="
-                    mb-6
                     text-primary
                     text-center
                 "
             >
                 Life Control
             </Typography>
+
+            <Divider className="my-2"/>
 
             <Stack spacing={2} className="flex-1">
                 {menu.map(item => {

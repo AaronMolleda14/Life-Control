@@ -13,7 +13,7 @@ export default function Divider({
 
             ${orientation === "horizontal"
                 ? "h-px w-full"
-                : "w-px h-full"
+                : "w-px self-stretch"
             }
 
             ${className}

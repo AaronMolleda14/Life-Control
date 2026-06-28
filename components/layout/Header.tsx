@@ -5,10 +5,16 @@ import NotificationButton from "./NotificationButton";
 import UserMenu from "./UserMenu";
 import Stack from "../common/UI/Stack";
 
-export default function Header() {
+interface HeaderProps {
+    title: string
+}
+
+export default function Header({
+    title
+}: HeaderProps) {
     return (
         <header className="
-            h-16
+            h-17
             border-b
             border-border
             bg-surface
@@ -19,8 +25,8 @@ export default function Header() {
 
             px-6
         ">
-            <Typography variant="h3">
-                Dashboard
+            <Typography variant="h2">
+                {title}
             </Typography>
 
             <Stack spacing={4} direction="row">

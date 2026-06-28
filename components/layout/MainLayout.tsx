@@ -4,10 +4,12 @@ import Sidebar from "./Sidebar";
 import Header from "./Header";
 
 interface MainLayoutProps {
+    headerTitle: string;
     children: React.ReactNode;
 }
 
 export default function MainLayout({
+    headerTitle,
     children,
 }: MainLayoutProps) {
 
@@ -20,7 +22,7 @@ export default function MainLayout({
                 flex-1
                 flex-col
             ">
-                <Header />
+                <Header title={headerTitle}/>
 
                 <main className="
                     flex-1

@@ -5,7 +5,7 @@ export default function Dashboard() {
     
 
     return (
-        <MainLayout>
+        <MainLayout headerTitle="Finanzas">
             <FinanceContent />
         </MainLayout> 
     )
