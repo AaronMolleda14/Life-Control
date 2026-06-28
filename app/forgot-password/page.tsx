@@ -1,4 +1,4 @@
-import ForgotPassForm from "@/features/ForgotPassForm"
+import ForgotPassForm from "@/features/Login/ForgotPassForm"
 
 export default function ForgotPassword() {
     return (

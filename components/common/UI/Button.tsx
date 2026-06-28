@@ -13,7 +13,7 @@ export default function Button({
     const variants = {
         primary: 'bg-primary text-white hover:bg-primary-hover',
         secondary: 'bg-surface text-foreground border border-border hover:bg-background',
-        ghost: 'bg-transparent text-primary hover:bg-surface',
+        ghost: 'bg-transparent text-foreground hover:bg-primary/10',
         danger: 'bg-danger text-white'
     };
 

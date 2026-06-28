@@ -14,12 +14,14 @@ interface PopoverProps {
     open: boolean;
     anchorRef: RefObject<HTMLElement | null>;
     children: ReactNode;
+    horizontalAlign?: "left" | "right"
 }
 
 export default function Popover({
     open,
     anchorRef,
     children,
+    horizontalAlign = "left",
 }: PopoverProps) {
     const [position, setPosition] =
         useState({
@@ -31,14 +33,15 @@ export default function Popover({
         if (!open || !anchorRef.current)
             return;
 
-        const rect =
-            anchorRef.current.getBoundingClientRect();
+        const rect = anchorRef.current.getBoundingClientRect();
 
         setPosition({
             top: rect.bottom + window.scrollY + 8,
-            left: rect.left + window.scrollX,
+            left: horizontalAlign === "left"
+                ? rect.left + window.scrollX
+                : rect.right + window.scrollX,
         });
-    }, [open, anchorRef]);
+    }, [open, anchorRef, horizontalAlign]);
 
     if (!open) return null;
 
@@ -49,6 +52,9 @@ export default function Popover({
                 style={{
                     top: position.top,
                     left: position.left,
+                    transform: horizontalAlign === "right"
+                        ? "translateX(-100%)"
+                        : undefined,
                 }}
             >
                 {children}

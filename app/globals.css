@@ -4,6 +4,8 @@
   /* Backgrounds */
   --background: #dde6ef;
   --surface: #f3f9ff;
+  --paper: #C1CDD9;
+  --modal: #9EADBD;
 
   /* Text */
   --foreground: #000000;
@@ -18,7 +20,7 @@
   /* States */
   --success: #00cb3a;
   --warning: #ffb700;
-  --danger: #cd0000;
+  --danger: #ff0000;
 
   /* Borders */
   --border: #9EADBD;
@@ -27,6 +29,8 @@
 .dark {
   --background: #21272d;
   --surface: #2f3943;
+  --paper: #45525F;
+  --modal: #5C6E7F;
 
   --foreground: #ffffff;
   --foreground-muted: #c1cdd9;
@@ -47,6 +51,8 @@
   /* Colores */
   --color-background: var(--background);
   --color-surface: var(--surface);
+  --color-paper: var(--paper);
+  --color-modal: var(--modal);
 
   --color-foreground: var(--foreground);
   --color-foreground-muted: var(--foreground-muted);

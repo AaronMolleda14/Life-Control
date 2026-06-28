@@ -1,4 +1,4 @@
-import ResetPassForm from "@/features/ResetPassForm"
+import ResetPassForm from "@/features/Login/ResetPassForm"
 
 export default function Register() {
     return (

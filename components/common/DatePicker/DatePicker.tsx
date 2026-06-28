@@ -3,11 +3,11 @@
 import { useRef, useState } from "react";
 import dayjs, { Dayjs } from "dayjs";
 
-import TextField from "@/components/common/TextField";
-import Popover from "@/components/common/Popover";
-import Paper from "@/components/common/Paper";
-import Box from "./Box";
-import IconButton from "@/components/common/IconButton";
+import TextField from "@/components/common/UI/TextField";
+import Popover from "@/components/common/UI/Popover";
+import Paper from "@/components/common/UI/Paper";
+import Box from "@/components/common/UI/Box";
+import IconButton from "@/components/common/UI/IconButton";
 
 import DaysGrid from "./DaysGrid";
 import MonthsGrid from "./MonthsGrid";
